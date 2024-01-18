@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .combobox-list-container{
+    @apply border-t max-h-20 overflow-y-auto font-medium h-0 transition-all duration-[5000];
+  }
+  .combobox-list-container::-webkit-scrollbar{
+    display: none;
+  }
+  .combobox-list-item:hover img{
+    transform: scale(1.3);
+  }
+}
