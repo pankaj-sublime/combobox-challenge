@@ -52,7 +52,7 @@ function App() {
           setSelectedItem(value);
         }}
         items={listItems}
-        containerClass="w-[25%]"
+        containerClass="w-[70%] md:w-[25%]"
         placeholder="Choose a Fruit:"
         debounceDelay={400}
       />
