@@ -62,7 +62,7 @@ const ComboBox = ({
 
   return (
     <div
-      className={`combobox-container box-border relative text-gray-800 ${containerClass}`}
+      className={`combobox-container box-border h-max relative text-gray-800 ${containerClass}`}
       onClick={handleFocus}
       role="combobox"
       aria-describedby="A combobox for taking from a list of available options"
