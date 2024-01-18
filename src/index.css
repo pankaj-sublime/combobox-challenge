@@ -4,7 +4,7 @@
 
 @layer components{
   .combobox-list-container{
-    @apply border-t max-h-20 overflow-y-auto font-medium h-0 transition-all duration-[5000];
+    @apply border-t max-h-36 overflow-y-auto font-medium h-0 transition-all duration-[5000];
   }
   .combobox-list-container::-webkit-scrollbar{
     display: none;
