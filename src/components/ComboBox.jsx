@@ -19,6 +19,7 @@ const ComboBox = ({
       let container = document.querySelector(".combobox-container");
       if (container && !container?.contains(e.target)) {
         setActive(false);
+        setActiveItems(items);
       }
     };
     document.addEventListener("mouseup", eventHandler);
@@ -29,11 +30,10 @@ const ComboBox = ({
   });
 
   const searchContent = (searchText) => {
-    if (searchText !== "") {
+    if (searchText !== "" && active) {
       let searchResults = items?.filter((d) =>
         d?.text?.toLowerCase().includes(searchText?.toLowerCase())
       );
-      console.log(searchResults);
       setActiveItems(searchResults);
     } else {
       setActiveItems(items);
@@ -52,11 +52,14 @@ const ComboBox = ({
     const { value } = e.target;
     handleChange(value);
   };
+
   const handleFocus = () => {
     setActive(true);
   };
+
   const selectHandler = (item) => {
     handleChange(item.text);
+    setActiveItems(items);
     setActive(false);
   };
 
@@ -68,7 +71,7 @@ const ComboBox = ({
       aria-describedby="A combobox for taking from a list of available options"
     >
       <div
-        className={`rounded-t-md flex flex-col transition-all duration-[100] ${
+        className={`rounded-t-md flex flex-col ${
           active
             ? "border-2 border-[#0000ff] " +
               (activeItems.length > 0 ? "border-b-0" : "rounded-b-md")
